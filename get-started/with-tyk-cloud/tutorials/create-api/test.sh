@@ -11,10 +11,5 @@ done
 tyk::token
 
 curl \
-    --data @"${script_dir:-}/02.json" \
     --header "Authorization: ${token:-}" \
-    --header "Content-Type: application/json" \
-    --request POST \
-    --silent \
-    https://admin.cloudv2.tyk.io/api/apis/ \
-    | jq
+    https://jlucktay.cloudv2.tyk.io/test-api/get
