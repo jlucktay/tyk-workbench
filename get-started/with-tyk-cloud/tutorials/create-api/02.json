@@ -1,0 +1,28 @@
+{
+    "api_definition": {
+        "active": true,
+        "auth": {
+            "auth_header_name": "Authorization"
+        },
+        "definition": {
+            "key": "x-api-version",
+            "location": "header"
+        },
+        "name": "Test API",
+        "proxy": {
+            "listen_path": "/test-api/",
+            "strip_listen_path": true,
+            "target_url": "http://httpbin.org/"
+        },
+        "slug": "test-api",
+        "version_data": {
+            "not_versioned": true,
+            "versions": {
+                "Default": {
+                    "name": "Default",
+                    "use_extended_paths": true
+                }
+            }
+        }
+    }
+}

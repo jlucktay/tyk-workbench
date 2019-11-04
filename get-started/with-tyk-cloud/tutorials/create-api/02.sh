@@ -11,7 +11,7 @@ hash jq 2>/dev/null || {
     exit 1
 }
 
-test -f token.json || {
+test -f "$script_dir/token.json" || {
     echo >&2 "$script_name requires '$script_dir/token.json' but it was not found."
     exit 1
 }
@@ -24,10 +24,10 @@ test "$token" = "null" && {
 }
 
 curl \
+    --data @"02.json" \
     --header "Authorization: $token" \
     --header "Content-Type: application/json" \
     --request POST \
     --silent \
     https://admin.cloudv2.tyk.io/api/apis/ \
     | jq
-
