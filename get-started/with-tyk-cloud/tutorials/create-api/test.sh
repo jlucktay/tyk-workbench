@@ -8,8 +8,12 @@ for lib in "${TYK_ROOT}"/lib/*.sh; do
     source "$lib"
 done
 
-tyk::token
+tyk::key
 
 curl \
-    --header "Authorization: ${token:-}" \
-    https://jlucktay.cloudv2.tyk.io/test-api/get
+    --header "Authorization: ${key:-}" \
+    --header "Foo: Bar" \
+    --request GET \
+    --silent \
+    --verbose \
+    "https://jlucktay.cloudv2.tyk.io/test-api/get?foo=bar"
