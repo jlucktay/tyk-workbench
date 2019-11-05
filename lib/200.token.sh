@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+echo "200.token.sh - start"
+
 function tyk::token(){
+    echo "tyk::token() start"
+
     ### Check for presence of other tools
     # JQ
     hash jq 2>/dev/null || {
@@ -20,4 +24,8 @@ function tyk::token(){
         echo >&2 "'$script_dir/token.json' did not contain a value under the 'token' key."
         exit 1
     }
+
+    echo "tyk::token() finish"
 }
+
+echo "200.token.sh - finish"
