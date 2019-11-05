@@ -1,0 +1,59 @@
+{
+    "api_model": {},
+    "data": {
+        "access_rights": {
+            "6f095cfbdd50450970e71df1ca967243": {
+                "allowance_scope": "",
+                "allowed_urls": null,
+                "api_id": "6f095cfbdd50450970e71df1ca967243",
+                "api_name": "test-api",
+                "limit": null,
+                "versions": [
+                    "Default"
+                ]
+            }
+        },
+        "alias": "",
+        "allowance": 1000,
+        "apply_policies": null,
+        "apply_policy_id": "",
+        "basic_auth_data": {
+            "hash_type": "",
+            "password": "",
+            "user": ""
+        },
+        "certificate": "",
+        "data_expires": 0,
+        "date_created": "2019-11-05T11:27:07.153265425Z",
+        "enable_detail_recording": false,
+        "expires": -1,
+        "hmac_enabled": false,
+        "hmac_string": "",
+        "id_extractor_deadline": 0,
+        "is_inactive": false,
+        "jwt_data": {
+            "secret": ""
+        },
+        "last_check": 0,
+        "last_updated": "1572953227",
+        "meta_data": {},
+        "monitor": {
+            "trigger_limits": null
+        },
+        "oauth_client_id": "",
+        "oauth_keys": null,
+        "org_id": "5dbc41a8c7cb220001e9c1e3",
+        "per": 1,
+        "quota_max": -1,
+        "quota_remaining": -1,
+        "quota_renewal_rate": 60,
+        "quota_renews": 1572953287,
+        "rate": 1000,
+        "session_lifetime": 0,
+        "tags": [],
+        "throttle_interval": 0,
+        "throttle_retry_limit": 0
+    },
+    "key_hash": "<redacted>",
+    "key_id": "<redacted>"
+}

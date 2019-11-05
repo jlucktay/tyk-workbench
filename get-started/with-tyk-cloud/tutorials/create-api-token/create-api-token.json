@@ -1,0 +1,20 @@
+{
+    "access_rights": {
+        "6f095cfbdd50450970e71df1ca967243": {
+            "api_id": "6f095cfbdd50450970e71df1ca967243",
+            "api_name": "test-api",
+            "versions": [
+                "Default"
+            ]
+        }
+    },
+    "allowance": 1000,
+    "expires": -1,
+    "meta_data": {},
+    "per": 1,
+    "quota_max": -1,
+    "quota_remaining": -1,
+    "quota_renewal_rate": 60,
+    "quota_renews": 1449051461,
+    "rate": 1000
+}
