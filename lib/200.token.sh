@@ -6,22 +6,15 @@ echo "200.token.sh - start"
 function tyk::token(){
     echo "tyk::token() start"
 
-    ### Check for presence of other tools
-    # JQ
-    hash jq 2>/dev/null || {
-        echo >&2 "${script_name:-} requires 'jq' but it's not installed: https://github.com/stedolan/jq/wiki/Installation"
+    test -f "${TYK_ROOT:-}/lib/token.json" || {
+        echo >&2 "${script_name:-} requires '$TYK_ROOT/lib/token.json' but it was not found."
         exit 1
     }
 
-    test -f "${script_dir:-}/token.json" || {
-        echo >&2 "$script_name requires '$script_dir/token.json' but it was not found."
-        exit 1
-    }
-
-    token=$( jq --raw-output '.token' "$script_dir/token.json" )
+    token=$( jq --raw-output '.token' "$TYK_ROOT/lib/token.json" )
 
     test "$token" = "null" && {
-        echo >&2 "'$script_dir/token.json' did not contain a value under the 'token' key."
+        echo >&2 "'$TYK_ROOT/lib/token.json' did not contain a value under the 'token' key."
         exit 1
     }
 
