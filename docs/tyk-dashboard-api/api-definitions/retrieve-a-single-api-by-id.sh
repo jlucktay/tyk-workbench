@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-TYK_ROOT=$( dirname "${BASH_SOURCE[0]}" )/../../../..
+TYK_ROOT=$( dirname "${BASH_SOURCE[0]}" )/../../..
 
 for lib in "${TYK_ROOT}"/lib/*.sh; do
     # shellcheck disable=SC1090
@@ -11,10 +11,8 @@ done
 tyk::token
 
 curl \
-    --data @"${script_dir:-}/02.json" \
     --header "Authorization: ${token:-}" \
-    --header "Content-Type: application/json" \
-    --request POST \
+    --request GET \
     --silent \
-    https://admin.cloudv2.tyk.io/api/apis/ \
+    "https://admin.cloudv2.tyk.io/api/apis/5dc04d2deafe810001a9a85b" \
     | jq

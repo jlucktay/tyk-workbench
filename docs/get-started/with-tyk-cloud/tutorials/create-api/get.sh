@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-TYK_ROOT=$( dirname "${BASH_SOURCE[0]}" )/../../../..
+TYK_ROOT=$( dirname "${BASH_SOURCE[0]}" )/../../../../..
 
 for lib in "${TYK_ROOT}"/lib/*.sh; do
     # shellcheck disable=SC1090
