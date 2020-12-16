@@ -31,6 +31,10 @@ function tyk::key() {
   tyk::get_from_json "${TYK_ROOT:?}/lib/key.json" ".key"
 }
 
+function tyk::org_id() {
+  tyk::get_from_json "$TYK_ROOT/lib/org_id.json" ".org_id"
+}
+
 function tyk::token() {
   tyk::get_from_json "$TYK_ROOT/lib/token.json" ".token"
 }

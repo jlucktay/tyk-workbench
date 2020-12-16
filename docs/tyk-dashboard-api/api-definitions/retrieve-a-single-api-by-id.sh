@@ -9,8 +9,7 @@ for lib in "${TYK_ROOT}"/lib/*.sh; do
 done
 
 curl \
-    --header "Authorization: ${token:-}" \
-    --request GET \
-    --silent \
-    "https://admin.cloudv2.tyk.io/api/apis/5dc04d2deafe810001a9a85b" \
-    | jq
+  --header "Authorization: $(tyk::token)" \
+  --request GET \
+  --silent \
+  "https://admin.cloudv2.tyk.io/api/apis/$(tyk::org_id)"
