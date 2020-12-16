@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-TYK_ROOT=$( dirname "${BASH_SOURCE[0]}" )/../../..
+readonly TYK_ROOT="$(cd "$(dirname "${BASH_SOURCE[-1]}")" &> /dev/null && git rev-parse --show-toplevel)"
 
 for lib in "${TYK_ROOT}"/lib/*.sh; do
-    # shellcheck disable=SC1090
-    source "$lib"
+  # shellcheck disable=SC1090
+  source "$lib"
 done
-
-tyk::token
 
 curl \
     --header "Authorization: ${token:-}" \
